@@ -1,13 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { PlaywrightHomePage } from '../pages/PlaywrightHomePage';
 
-test('has title', async ({ page }) => {
+test('playwright has title POM', async ({ page }) => {
   const homePage = new PlaywrightHomePage(page);
   await homePage.goto();
   await homePage.expectTitle();
 });
 
-test('get started link', async ({ page }) => {
+test('playwright get started link POM', async ({ page }) => {
   const homePage = new PlaywrightHomePage(page);
   await homePage.goto();
   await homePage.goToGetStarted();

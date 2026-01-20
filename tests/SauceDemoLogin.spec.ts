@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
 
-test('test login error', async ({ page }) => {
+test('test login error inline', async ({ page }) => {
 //   await page.goto('https://www.saucedemo.com/');
 //   await page.locator('[data-test="username"]').fill('aaa');
 //   await page.locator('[data-test="password"]').fill('aaa123');
 //   await page.locator('[data-test="login-button"]').click();
 //   await expect(page.locator('[data-test="error"]')).toBeVisible();
-  await test.step('Open login page', async () => {
+  await test.step('Test login error inline', async () => {
     console.log('[STEP] Open login page');
     await page.goto('https://www.saucedemo.com/');
   });
@@ -25,18 +25,24 @@ test('test login error', async ({ page }) => {
 
 });
 
-test('test login success', async ({ page }) => {
-  await page.goto('https://www.saucedemo.com/');
+test('test login success inline', async ({ page }) => {
 
-  await page.locator('[data-test="username"]').fill('standard_user');
-//   await page.locator('[data-test="error"]').click();
-//   await page.locator('[data-test="password"]').dblclick();
-  await page.locator('[data-test="password"]').fill('secret_sauce');
-  await page.locator('[data-test="login-button"]').click();
+  await test.step('Open login page', async () => {
+    console.log('[STEP] Open login page');
+    await page.goto('https://www.saucedemo.com/');
+    await expect(page).toHaveTitle(/Swag Labs/);
+  });
+  
+  await test.step('Submit valid credentials', async () => {
+    console.log('[STEP] Submit valid credentials');
+    await page.locator('[data-test="username"]').fill('standard_user');
+    await page.locator('[data-test="password"]').fill('secret_sauce');
+    await page.locator('[data-test="login-button"]').click(); 
+  });
 
-  await expect(page.locator('[data-test="title"]')).toContainText('Products');
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-
-  await expect(page).toHaveTitle(/inventory/);
-
+  await test.step('Verify successful login', async () => {
+    console.log('[STEP] Verify successful login');      
+    await expect(page.locator('[data-test="title"]')).toContainText('Products');
+    // await expect(page).toHaveTitle(/inventory/);
+  });
 });
