@@ -1,7 +1,9 @@
 # TS_Playwright
 
 A TypeScript automation project using **Playwright Test** for end‑to‑end UI testing with example test cases. This repository is used as a practice and reference project for modern UI automation, Page Object Model (POM) usage, debugging, and CI/CD integration.
+# TS_Playwright
 
+A TypeScript automation project using **Playwright Test** for end‑to‑end UI testing with example test cases. This repository is used as a practice and reference project for modern UI automation, Page Object Model (POM) usage, debugging, and CI/CD integration.
 ---
 
 ## 📦 Project Structure
@@ -12,11 +14,13 @@ TS_Playwright/
 ├── pages/                   # Page Object Model classes
 ├── tests/                   # Playwright test specs
 ├── playwright.config.ts     # Playwright Test configuration
-├── package.json             # npm project & scripts
-└── package-lock.json        # npm lockfile
-```
 
----
+### 🏨 Restful Booker
+
+* End-to-end booking availability flow using Playwright Test
+* Validates booking search by waiting for backend API response (Promise API)
+* Demonstrates async API synchronization and UI update checks
+* Example: checks for room availability after submitting booking dates
 
 ## 🚀 Setup & Installation
 
@@ -94,6 +98,7 @@ POM usage here is intentionally kept lean to:
 
 ---
 
+
 ## 📦 Example Test Coverage
 
 ### 🥤 SauceDemo
@@ -102,11 +107,11 @@ POM usage here is intentionally kept lean to:
 * Inline test implementation
 * POM-based test implementation
 
-### 🏦 ParaBank
+### 🏨 Restful Booker
 
-* Login and account-related flows (practice-oriented)
-* Dropdown handling and backend-driven UI state validation
-* Prepared for demonstrating async backend synchronization patterns
+* Booking availability search flow
+* Validates backend-driven UI state using Playwright Promise API
+* Demonstrates async API wait and UI assertion
 
 ---
 
