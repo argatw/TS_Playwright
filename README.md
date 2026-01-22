@@ -84,8 +84,6 @@ This project demonstrates clean and minimal Page Object Model usage:
 
 - **`pages/PlaywrightHomePage.ts`**  
   Encapsulates re-direct and page-assert related flows for Playwright website.
-- **`pages/ParabankPage.ts`**  
-  Encapsulates login and account-related flows for ParaBank scenarios.
 
 POM usage here is intentionally kept lean to:
 - improve test readability
