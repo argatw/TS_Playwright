@@ -109,16 +109,6 @@ POM usage here is intentionally kept lean to:
 - Validate HTTP status codes and response payload
 - Demonstrates backend validation without UI dependency
 - Demonstrates **UI–API synchronization** using `page.waitForResponse`
-### 🏦 ParaBank
-- Login and account-related flows (practice-oriented)
-- Dropdown handling with async backend population
-
-### 🔌 Restful Booker (API Testing)
-- API-inclusive UI test flow using Playwright `request` context
-- Retrieve available rooms in selected dates (GET)
-- Validate HTTP status codes and response payload
-- Demonstrates backend validation without UI dependency
-- Demonstrates **UI–API synchronization** using `page.waitForResponse`
 
 ---
 
