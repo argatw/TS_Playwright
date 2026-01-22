@@ -84,6 +84,8 @@ This project demonstrates clean and minimal Page Object Model usage:
 
 - **`pages/PlaywrightHomePage.ts`**  
   Encapsulates re-direct and page-assert related flows for Playwright website.
+- **`pages/ParabankPage.ts`**  
+  Encapsulates login and account-related flows for ParaBank scenarios.
 
 POM usage here is intentionally kept lean to:
 - improve test readability
@@ -106,6 +108,16 @@ POM usage here is intentionally kept lean to:
 ### 🔌 Restful Booker (API Testing)
 - API-inclusive UI test flow using Playwright `request` context
 - Retrieve available rooms for selected dates (GET)
+- Validate HTTP status codes and response payload
+- Demonstrates backend validation without UI dependency
+- Demonstrates **UI–API synchronization** using `page.waitForResponse`
+### 🏦 ParaBank
+- Login and account-related flows (practice-oriented)
+- Dropdown handling with async backend population
+
+### 🔌 Restful Booker (API Testing)
+- API-inclusive UI test flow using Playwright `request` context
+- Retrieve available rooms in selected dates (GET)
 - Validate HTTP status codes and response payload
 - Demonstrates backend validation without UI dependency
 - Demonstrates **UI–API synchronization** using `page.waitForResponse`
@@ -136,6 +148,13 @@ A working GitHub Actions pipeline is included:
 ### CI Behavior
 - Triggered on **push** and **pull requests** to `main` / `master`
 - Runs on **Ubuntu (Linux) runners**
+- Uses **Node.js LTS**
+- Installs dependencies using `npm ci`
+- Installs Playwright browsers
+- Executes full Playwright test suite
+- Uploads HTML test report as a build artifact
+- Triggered on **push** and **pull requests** to `main` / `master`
+- Runs on **Ubuntu (linux) runners**
 - Uses **Node.js LTS**
 - Installs dependencies using `npm ci`
 - Installs Playwright browsers
